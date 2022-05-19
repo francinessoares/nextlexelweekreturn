@@ -1,5 +1,5 @@
 import html2canvas from "html2canvas";
-import { Camera } from "phosphor-react";
+import { Camera, Trash } from "phosphor-react";
 import { useState } from "react";
 import { Loading } from "./Loading";
 
@@ -23,7 +23,17 @@ export function ScreenshotButton({ screenshot, onScreenshotTook }: ScreenshotBut
 
     if (screenshot) {
         return (
-            <p>foto</p>
+            <button
+                type="button"
+                className="p-1 2-10 h-10 rounded-md border-md border-transprarent flex justify-end items-end text-zinc-400"
+                style={{
+                    backgroundImage: `url(${screenshot})`, 
+                    backgroundPosition: 'right bottom',
+                    backgroundSize: 180,
+                }}
+            >
+                <Trash weight="fill" />
+            </button>
         );
     }
 
